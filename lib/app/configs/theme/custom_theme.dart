@@ -299,14 +299,7 @@ class CustomTextThemeData {
     required this.body1,
     required this.body2,
     required this.body3,
-    required this.body4,
-    required this.uppercase1,
-    required this.uppercase2,
-    required this.uppercase3,
-    required this.uppercase4,
     required this.button,
-    required this.overline,
-    required this.caption,
   })  : assert(h1 != null),
         assert(h2 != null),
         assert(h3 != null),
@@ -317,14 +310,7 @@ class CustomTextThemeData {
         assert(body1 != null),
         assert(body2 != null),
         assert(body3 != null),
-        assert(body4 != null),
-        assert(uppercase1 != null),
-        assert(uppercase2 != null),
-        assert(uppercase3 != null),
-        assert(uppercase4 != null),
-        assert(button != null),
-        assert(overline != null),
-        assert(caption != null);
+        assert(button != null);
   final TextStyle? h1;
   final TextStyle? h2;
   final TextStyle? h3;
@@ -335,12 +321,5 @@ class CustomTextThemeData {
   final TextStyle? body1;
   final TextStyle? body2;
   final TextStyle? body3;
-  final TextStyle? body4;
-  final TextStyle? uppercase1;
-  final TextStyle? uppercase2;
-  final TextStyle? uppercase3;
-  final TextStyle? uppercase4;
   final TextStyle? button;
-  final TextStyle? overline;
-  final TextStyle? caption;
 }
