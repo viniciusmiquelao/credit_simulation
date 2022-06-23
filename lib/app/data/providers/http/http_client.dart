@@ -1,9 +1,7 @@
 import 'dart:io' as io;
 import 'package:credit_simulation/app/data/providers/http/response.status.dart';
-import 'package:flutter/services.dart';
 import 'http_response.dart';
 import 'package:dio/dio.dart';
-import 'package:dio/adapter.dart';
 
 abstract class HttpClient {
   Future<HttpResponse> get(
