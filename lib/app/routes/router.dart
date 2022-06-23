@@ -1,4 +1,5 @@
 import 'package:credit_simulation/app/ui/pages/credit_simulation/personal_data_credit_simulation_page.dart';
+import 'package:credit_simulation/app/ui/pages/credit_simulation/simulation_steps_page.dart';
 import 'package:flutter/material.dart';
 import 'routes.dart';
 
@@ -7,6 +8,7 @@ class CustomRouter {
     //Credit Simulation
     Routes.personalDataCreditSimulation: (_) =>
         const PersonalDataCreditSimulationPage(),
+    Routes.simulationSteps: (_) => const SimulationStepsPage(),
   };
 
   static Route<dynamic> onGenerateUnknowedRoute(RouteSettings settings) {
