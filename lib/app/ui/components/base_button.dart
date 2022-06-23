@@ -10,7 +10,7 @@ class BaseButton extends StatelessWidget {
     this.borderSide,
     this.color,
     this.textStyle,
-    this.height = 45,
+    this.height = 50,
     this.width,
     this.borderRadius = 5,
     Brightness brightness = Brightness.dark,
