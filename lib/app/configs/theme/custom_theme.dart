@@ -102,34 +102,30 @@ class CustomThemeData {
 
       textTheme: TextTheme(
         headline1: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: colors!.primary),
+            fontSize: 20, fontWeight: FontWeight.bold, color: colors!.text),
         headline2: TextStyle(
-            fontSize: 18, fontWeight: FontWeight.bold, color: colors!.primary),
+            fontSize: 18, fontWeight: FontWeight.bold, color: colors!.text),
         headline3: TextStyle(
-            fontSize: 16, fontWeight: FontWeight.bold, color: colors!.primary),
+            fontSize: 16, fontWeight: FontWeight.bold, color: colors!.text),
         headline4: TextStyle(
-            fontSize: 14, fontWeight: FontWeight.bold, color: colors!.primary),
+            fontSize: 14, fontWeight: FontWeight.bold, color: colors!.text),
         headline5: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.normal,
-            color: colors!.primary),
+            fontSize: 20, fontWeight: FontWeight.normal, color: colors!.text),
         headline6: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.normal,
-            color: colors!.primary),
+            fontSize: 18, fontWeight: FontWeight.normal, color: colors!.text),
         // Used by [TextField] typed text style.
         bodyText1: TextStyle(
           fontSize: 16,
-          color: colors!.primary,
+          color: colors!.text,
           fontWeight: FontWeight.bold,
         ),
         bodyText2: TextStyle(
           fontSize: 16,
-          color: colors!.primary,
+          color: colors!.text,
         ),
-        subtitle1: TextStyle(color: colors!.primary),
+        subtitle1: TextStyle(color: colors!.text),
       ).apply(
-        bodyColor: colors!.primary,
+        bodyColor: colors!.text,
       ),
 
       // Default Colors
