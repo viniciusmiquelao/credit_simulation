@@ -18,7 +18,7 @@ final defaultTheme = CustomThemeData(
     text: const Color(0xFF000000),
 
     //Button
-    button: const Color(0xFF27AE60),
+    button: const Color(0xFF52a2a6),
 
     //Pallete Color
     //Neutral
