@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../custom_theme.dart';
 
-final flavorInitialTheme = CustomThemeData(
+final defaultTheme = CustomThemeData(
   colors: CustomColorsThemeData(
-    background: const Color(0xFF00102A),
+    background: const Color(0xFFFFFFFFF),
 
     //Input
 
@@ -22,12 +22,12 @@ final flavorInitialTheme = CustomThemeData(
 
     //Pallete Color
     //Neutral
-    gray500: const Color(0xFF7F8B9F),
-    gray150: const Color(0xFFCBD3E0),
+    gray500: const Color(0xFF606165),
+    gray150: const Color(0xFF7F8B9F),
     gray50: const Color(0xFFF0F0F3),
 
     //Primary
-    primary: const Color(0xFF00102A),
+    primary: const Color(0xFF52a2a6),
 
     //Success
     success: const Color(0xFF27AE60),
