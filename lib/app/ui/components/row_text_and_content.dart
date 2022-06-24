@@ -26,7 +26,7 @@ class RowTitleAndContent extends StatelessWidget {
               ),
               Text(
                 content,
-                style: CustomTheme.of(context).textTheme!.body2!.copyWith(
+                style: CustomTheme.of(context).textTheme!.body1!.copyWith(
                     color: CustomTheme.of(context).colors!.gray150,
                     fontSize: 17),
               ),
