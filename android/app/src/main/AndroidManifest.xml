@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eternityapps.credit_simulation">
+        <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="credit_simulation"
         android:name="${applicationName}"
