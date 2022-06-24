@@ -4,6 +4,10 @@ import 'package:dio/dio.dart';
 import '../../http/http_client.dart';
 
 void setupSharedInjections() {
+  DependencesInjector.registerFactory<LogInterceptor>(
+      () => LogInterceptor(requestBody: true, responseBody: true));
+  DependencesInjector.registerFactory<Dio>(() => Dio());
+
   DependencesInjector.registerFactory<HttpClient>(() {
     return HttpClientImpl(
       DependencesInjector.get<Dio>(),
