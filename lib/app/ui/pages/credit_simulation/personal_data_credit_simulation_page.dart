@@ -29,6 +29,7 @@ class _PersonalDataCreditSimulationPageState
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeScrollView(
+        scrollPhysics: const ClampingScrollPhysics(),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.max,
