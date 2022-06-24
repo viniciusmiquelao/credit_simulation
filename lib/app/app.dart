@@ -1,6 +1,7 @@
 import 'package:credit_simulation/app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'configs/theme/theme_switcher.dart';
 import 'configs/theme/themes/default_theme.dart';
@@ -18,6 +19,12 @@ class CreditSimulationApp extends StatelessWidget {
         routes: CustomRouter.routes,
         onUnknownRoute: CustomRouter.onGenerateUnknowedRoute,
         initialRoute: Routes.personalDataCreditSimulation,
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [const Locale('pt', 'BR'), const Locale('en', 'US')],
         builder: (context, widget) {
           return ScrollConfiguration(
             behavior: const BouncingScrollBehavior(),
