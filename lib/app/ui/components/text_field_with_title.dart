@@ -9,11 +9,15 @@ class TextFieldWithTitle extends StatelessWidget {
     required this.title,
     this.titleBold,
     required this.hintText,
+    this.onChanged,
+    this.validator,
   }) : super(key: key);
 
   final String title;
   final String? titleBold;
   final String hintText;
+  final Function(String)? onChanged;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +39,12 @@ class TextFieldWithTitle extends StatelessWidget {
           ),
         ),
         const SizedBox(height: Spacements.XS),
-        TextField(
-          decoration: InputDecoration(hintText: hintText),
+        TextFormField(
+          validator: validator,
+          onChanged: onChanged,
+          decoration: InputDecoration(
+            hintText: hintText,
+          ),
         ),
       ],
     );
