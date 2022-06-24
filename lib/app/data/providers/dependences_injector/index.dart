@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import 'modules/credit_simulation.dart';
+import 'modules/shared.dart';
 
 typedef FactoryFunc<T> = T Function();
 
@@ -29,6 +30,7 @@ class DependencesInjector {
   }
 
   static void setup() {
+    setupSharedInjections();
     setupCreditSimulationInjections();
   }
 }
