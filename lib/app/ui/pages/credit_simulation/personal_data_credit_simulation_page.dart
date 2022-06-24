@@ -4,6 +4,7 @@ import 'package:credit_simulation/app/configs/validators/validate_full_name.dart
 import 'package:credit_simulation/app/configs/validators/validator_email.dart';
 import 'package:credit_simulation/app/controllers/credit_simulation/credit_simulation_controller.dart';
 import 'package:credit_simulation/app/routes/routes.dart';
+import 'package:credit_simulation/app/ui/assets.dart';
 import 'package:credit_simulation/app/ui/components/base_button.dart';
 import 'package:credit_simulation/app/ui/components/safe_scroll_view.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,13 @@ class _PersonalDataCreditSimulationPageState
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                height: 300,
+                height: 320,
+                padding: const EdgeInsets.all(Spacements.L),
                 color:
                     CustomTheme.of(context).colors!.primary!.withOpacity(.05),
+                child: const SafeArea(
+                  child: Center(child: Asset(Assets.personalData)),
+                ),
               ),
               Flexible(
                 child: Padding(
