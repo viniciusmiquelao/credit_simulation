@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Applies a boiller plate banking theme to descendant widgets.
-///
 /// A theme describes the colors and other choices of an application.
 ///
 /// Descendant widgets obtain the current theme's [CustomThemeData]
