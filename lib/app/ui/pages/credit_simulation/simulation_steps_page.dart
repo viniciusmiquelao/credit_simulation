@@ -1,6 +1,7 @@
 import 'package:credit_simulation/app/configs/theme/custom_theme.dart';
-import 'package:credit_simulation/app/ui/pages/credit_simulation/steps/step_value.dart';
+import 'package:credit_simulation/app/controllers/credit_simulation/credit_simulation_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../configs/constants/spacements.dart';
 
@@ -12,6 +13,8 @@ class SimulationStepsPage extends StatefulWidget {
 }
 
 class _SimulationStepsPageState extends State<SimulationStepsPage> {
+  final _controller = Get.arguments as CreditSimulationController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +27,19 @@ class _SimulationStepsPageState extends State<SimulationStepsPage> {
               IntrinsicHeight(
                 child: Stack(
                   children: [
-                    Align(
-                      child: SizedBox(
-                        width: 200,
-                        child: LinearProgressIndicator(
-                          value: 0.5,
-                          backgroundColor:
-                              CustomTheme.of(context).colors!.gray50,
+                    Obx(
+                      () => Visibility(
+                        visible: !_controller.isLoading.value,
+                        child: Align(
+                          child: SizedBox(
+                            width: 200,
+                            child: LinearProgressIndicator(
+                              value: _controller.currentStep /
+                                  _controller.pageWidgets.length,
+                              backgroundColor:
+                                  CustomTheme.of(context).colors!.gray50,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -39,8 +48,8 @@ class _SimulationStepsPageState extends State<SimulationStepsPage> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: IconButton(
-                          icon: Icon(Icons.arrow_back),
-                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_back),
+                          onPressed: _controller.back,
                         ),
                       ),
                     ),
@@ -48,14 +57,12 @@ class _SimulationStepsPageState extends State<SimulationStepsPage> {
                 ),
               ),
               StepWrapperProvider(
-                onNext: () {},
+                onNext: _controller.next,
                 child: Expanded(
                   child: PageView(
                     physics: const NeverScrollableScrollPhysics(),
-                    controller: PageController(initialPage: 0),
-                    children: [
-                      StepValue(),
-                    ],
+                    controller: _controller.pageViewController,
+                    children: _controller.pageWidgets,
                   ),
                 ),
               ),
