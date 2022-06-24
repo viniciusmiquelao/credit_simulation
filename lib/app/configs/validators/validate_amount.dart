@@ -1,7 +1,11 @@
-String? validateFullName(String? input) {
-  input = input!.replaceAll('R\$ ', '').replaceAll(',', '').trim();
+String? validateAmount(String? input) {
+  input = input!
+      .replaceAll('R\$ ', '')
+      .replaceAll('.', '')
+      .replaceAll(',', '.')
+      .trim();
 
-  if (input.isEmpty || input == 'R\$ 0,00') return 'Digite um valor';
+  if (input.isEmpty) return 'Digite um valor';
   final valueInDouble = double.parse(input);
   if (valueInDouble < 500.00) return 'O valor deve ser maior que R\$ 500';
   if (valueInDouble > 300000.00)
