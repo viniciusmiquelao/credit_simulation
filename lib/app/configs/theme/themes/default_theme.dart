@@ -76,7 +76,7 @@ final defaultTheme = CustomThemeData(
       fontWeight: FontWeight.bold,
     ),
     body3: const TextStyle(
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: FontWeight.w400,
     ),
     button: const TextStyle(
