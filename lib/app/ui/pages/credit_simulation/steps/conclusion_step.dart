@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../../../configs/constants/spacements.dart';
 import '../../../../configs/theme/custom_theme.dart';
 import '../../../components/base_button.dart';
+import '../../../components/row_text_and_content.dart';
 import '../../../components/safe_scroll_view.dart';
 
 class ConclusionStep extends StatefulWidget {
@@ -110,45 +111,6 @@ class _StepDetailsState extends State<ConclusionStep> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class RowTitleAndContent extends StatelessWidget {
-  const RowTitleAndContent(
-      {Key? key, required this.title, required this.content})
-      : super(key: key);
-
-  final String title;
-  final String content;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: Spacements.XS),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: CustomTheme.of(context).textTheme!.body2,
-              ),
-              Text(
-                content,
-                style: CustomTheme.of(context).textTheme!.body2!.copyWith(
-                    color: CustomTheme.of(context).colors!.gray150,
-                    fontSize: 17),
-              ),
-            ],
-          ),
-        ),
-        Divider(
-          color: CustomTheme.of(context).colors!.gray50,
-          thickness: 2,
-        )
-      ],
     );
   }
 }
