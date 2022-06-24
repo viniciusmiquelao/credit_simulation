@@ -29,9 +29,14 @@ class _StepDetailsState extends State<ConclusionStep> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Resultado da simulação',
-              style: CustomTheme.of(context).textTheme!.h2,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: SizedBox(
+                child: Text(
+                  'Resultado da simulação',
+                  style: CustomTheme.of(context).textTheme!.h2,
+                ),
+              ),
             ),
             const SizedBox(height: Spacements.L),
             Column(
