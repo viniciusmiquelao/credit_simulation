@@ -93,7 +93,14 @@ class _PersonalDataCreditSimulationPageState
                         () => SafeArea(
                           child: BaseButton(
                             text: 'Continuar',
-                            onPressed: _controller.goToSteps,
+                            onPressed: _controller.formPersonalDataValid
+                                ? () {
+                                    Get.toNamed(
+                                      Routes.simulationSteps,
+                                      arguments: _controller,
+                                    );
+                                  }
+                                : null,
                           ),
                         ),
                       )
