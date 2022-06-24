@@ -52,7 +52,7 @@ class _StepValueState extends State<ValueStep> {
                     children: [
                       TextSpan(text: 'Insira um valor entre '),
                       TextSpan(
-                        text: 'R\$500',
+                        text: 'R\$1.000',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       TextSpan(text: ' a '),
