@@ -2,6 +2,8 @@ import 'package:credit_simulation/app/ui/pages/credit_simulation/steps/step_valu
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../configs/validators/validate_full_name.dart';
+import '../../configs/validators/validator_email.dart';
 import '../../routes/routes.dart';
 
 class CreditSimulationController extends GetxController {
@@ -53,8 +55,18 @@ class CreditSimulationController extends GetxController {
     return Future.value(isFirst);
   }
 
-  void goToSteps() {
+  void _goToSteps() {
     currentStep.value = 1;
     Get.toNamed(Routes.simulationSteps);
   }
+
+  var fullName = ''.obs;
+  var email = ''.obs;
+  var amount = ''.obs;
+
+  bool get _formPersonalDataValid =>
+      validateFullName(fullName.value) == null &&
+      validateEmail(email.value) == null;
+
+  VoidCallback? get goToSteps => _formPersonalDataValid ? _goToSteps : null;
 }
