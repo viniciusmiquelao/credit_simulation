@@ -40,6 +40,7 @@ class TextFieldWithTitle extends StatelessWidget {
         ),
         const SizedBox(height: Spacements.XS),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: validator,
           onChanged: onChanged,
           decoration: InputDecoration(
