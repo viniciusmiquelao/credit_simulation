@@ -86,7 +86,7 @@ class CustomThemeData {
 
   ThemeData toMaterialTheme() {
     return ThemeData(
-      fontFamily: 'Lato',
+      fontFamily: 'Inter',
       //primarySwatch: Colors.grey,
       colorScheme: ColorScheme.light(
         primary: colors!.primary!,
