@@ -173,7 +173,7 @@ class CustomThemeData {
           foregroundColor: MaterialStateProperty.resolveWith((states) {
             return states.contains(MaterialState.disabled)
                 ? colors!.primary!.withOpacity(.6)
-                : colors!.text;
+                : colors!.primary;
           }),
         ),
       ),
