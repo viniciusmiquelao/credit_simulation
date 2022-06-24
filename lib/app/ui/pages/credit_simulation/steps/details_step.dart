@@ -20,11 +20,11 @@ class _StepDetailsState extends State<DetailsStep> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => SafeScrollView(
-        child: _controller.isLoading.value
-            ? const LoadingPage()
-            : Padding(
-                padding: const EdgeInsets.all(Spacements.L),
+      () => _controller.isLoading.value
+          ? const LoadingPage()
+          : SafeScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(Spacements.M),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -130,7 +130,7 @@ class _StepDetailsState extends State<DetailsStep> {
                   ],
                 ),
               ),
-      ),
+            ),
     );
   }
 }
@@ -150,15 +150,19 @@ class LoadingPage extends StatelessWidget {
           children: [
             const CircularProgressIndicator(),
             const SizedBox(height: Spacements.XL),
-            Text(
-              'Aguarde um momento',
-              style: CustomTheme.of(context).textTheme?.h2,
-              maxLines: 1,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: SizedBox(
+                child: Text(
+                  'Aguarde um momento',
+                  style: CustomTheme.of(context).textTheme?.h2,
+                  maxLines: 1,
+                ),
+              ),
             ),
             const SizedBox(height: Spacements.S),
             Text(
               'Estamos simulando seu pedido de crédito Rispar..',
-              maxLines: 2,
               textAlign: TextAlign.center,
               style: CustomTheme.of(context).textTheme?.body1,
             )
