@@ -128,6 +128,8 @@ class CustomThemeData {
         bodyColor: colors!.text,
       ),
 
+      iconTheme: IconThemeData(color: this.colors?.primary),
+
       // Default Colors
       scaffoldBackgroundColor: colors!.background,
       errorColor: colors!.error,
