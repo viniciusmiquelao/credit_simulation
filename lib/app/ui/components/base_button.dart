@@ -50,7 +50,10 @@ class BaseButton extends StatelessWidget {
         child: Text(
           text!,
           maxLines: 1,
-          style: textStyle ?? CustomTheme.of(context).textTheme!.button,
+          style: textStyle ??
+              CustomTheme.of(context).textTheme!.button!.copyWith(
+                    color: CustomTheme.of(context).colors!.background,
+                  ),
           //style: newTextStyle,
         ),
       ),
