@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class SafeScrollView extends StatelessWidget {
   final Widget child;
   final EdgeInsets? padding;
+  final ScrollPhysics? scrollPhysics;
 
   const SafeScrollView({
     Key? key,
     required this.child,
     this.padding,
+    this.scrollPhysics = const ScrollPhysics(),
   }) : super(key: key);
 
   @override
@@ -15,6 +17,7 @@ class SafeScrollView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return SingleChildScrollView(
+          physics: scrollPhysics,
           padding: padding,
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: constraints.maxHeight),
