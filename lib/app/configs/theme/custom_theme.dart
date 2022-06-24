@@ -162,7 +162,6 @@ class CustomThemeData {
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0.0),
-          // textStyle: MaterialStateProperty.all(this.textTheme!.button),
           textStyle: MaterialStateProperty.all(
             const TextStyle(
               fontFamily: 'Lato',
