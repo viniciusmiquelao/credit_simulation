@@ -104,9 +104,9 @@ class CreditSimulationController extends GetxController {
           term: term.value,
         ),
       );
-      isLoading(false);
       simulationResponse = response;
       next();
+      isLoading(false);
     } catch (e) {
       isLoading(false);
       showCustomSnackbar(
