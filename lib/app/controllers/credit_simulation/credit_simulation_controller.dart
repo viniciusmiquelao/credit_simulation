@@ -1,14 +1,21 @@
 import 'package:credit_simulation/app/configs/validators/validate_amount.dart';
-import 'package:credit_simulation/app/ui/pages/credit_simulation/steps/step_details.dart';
-import 'package:credit_simulation/app/ui/pages/credit_simulation/steps/step_value.dart';
+import 'package:credit_simulation/app/data/models/simulation_request.dart';
+import 'package:credit_simulation/app/data/repositories/credit_simulation_repository.dart';
+import 'package:credit_simulation/app/ui/pages/credit_simulation/steps/details_step.dart';
+import 'package:credit_simulation/app/ui/pages/credit_simulation/steps/value_step.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../configs/validators/validate_full_name.dart';
 import '../../configs/validators/validator_email.dart';
+import '../../data/models/simulation_response.dart';
+import '../../ui/components/custom_snackbar.dart';
+import '../../ui/pages/credit_simulation/steps/conclusion_step.dart';
 
 class CreditSimulationController extends GetxController {
-  CreditSimulationController();
+  CreditSimulationController(this._creditSimulationRepository);
+
+  final CreditSimulationRepository _creditSimulationRepository;
 
   final pageViewController = PageController();
 
@@ -29,8 +36,9 @@ class CreditSimulationController extends GetxController {
   void decrementStep() => --currentStep.value;
 
   final pageWidgets = [
-    const StepValue(),
-    const StepDetails(),
+    const ValueStep(),
+    const DetailsStep(),
+    const ConclusionStep(),
   ];
 
   void next() {
@@ -80,4 +88,31 @@ class CreditSimulationController extends GetxController {
       validateEmail(email.value) == null;
 
   bool get formAmountValid => validateAmount(amount.value) == null;
+
+  late SimulationResponse simulationResponse;
+
+  void createSimulation() async {
+    try {
+      isLoading(true);
+      final response = await _creditSimulationRepository.createSimulation(
+        SimulationRequest(
+          fullname: fullName.value,
+          email: email.value,
+          ltv: ltv.value,
+          amount: amountToDouble,
+          hasProtectedCollateral: hasProtectedCollateral.value,
+          term: term.value,
+        ),
+      );
+      isLoading(false);
+      simulationResponse = response;
+      next();
+    } catch (e) {
+      isLoading(false);
+      showCustomSnackbar(
+        'Ocorreu um erro, tente novamente mais tarde',
+        color: Get.theme.colorScheme.error,
+      );
+    }
+  }
 }
